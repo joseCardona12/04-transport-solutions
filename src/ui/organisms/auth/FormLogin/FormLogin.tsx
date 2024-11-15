@@ -1,6 +1,6 @@
 "use client";
 
-import { ILoginRequest } from "@/app/core/application/dto/auth";
+import { ILoginRequest } from "@/app/core/application/dtos/auth";
 import { FormField } from "@/ui/molecules";
 import React from "react";
 import { useForm } from "react-hook-form";
