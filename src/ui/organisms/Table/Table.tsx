@@ -42,7 +42,10 @@ export default function Table({
                     vehicles.map((vehicle:IVehicle, index:number)=>(
                         <tr key={index}>
                             <td className="image-vehicle">
-                                <img src={vehicle.photo} alt="photo" />
+                                {vehicle.photo 
+                                ? <img src={vehicle.photo} alt="photo" />
+                                : <img src="/images/imageDefault.webp" alt="photo-default" />
+                                }
                             </td>
                             <td>{vehicle.make}</td>
                             <td>{vehicle.model}</td>
