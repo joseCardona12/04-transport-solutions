@@ -1,0 +1,18 @@
+div.content-filter {
+    display: flex;
+    width: 100%;
+    gap: var(--padding-large);
+    align-items: center;
+
+    div.filters {
+        display: flex;
+        gap: var(--padding-medium);
+    }
+
+    div.filter-buttons {
+        display: flex;
+        gap: var(--padding-small);
+        margin-top: var(--padding-large);
+        
+    }
+}

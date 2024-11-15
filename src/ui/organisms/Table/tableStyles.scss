@@ -1,0 +1,59 @@
+/* Estilo para la tabla y contenedor */
+.content-table {
+    border-radius: var(--border-radius-small);
+    padding: var(--padding-small);
+    background-color: var(--background-color-white);
+    box-shadow: var(--box-shadow-first);
+    overflow-x: auto;
+    width: 80%;
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+}
+
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; 
+}
+
+
+td {
+    font-size: 14px; 
+    width: 25%;
+}
+
+
+.content-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    div.icons{
+        display: flex;
+        gap: var(--padding-medium);
+    }
+}
+
+
+th, td {
+    width: 25%; 
+}
+
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 12px; 
+    }
+
+    .content-icons {
+        justify-content: space-around; 
+    }
+}

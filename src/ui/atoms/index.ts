@@ -3,6 +3,9 @@ import Button from "./Button/Button";
 import inputAlert from "./Alert/Alert";
 import Avatar from "./Avatar/Avatar";
 import ItemNavbar from "./ItemNavbar/ItemNavbar";
+import SectionTitle from "./SectionTitle/SectionTitle";
+import InputFIlter from "./InputFIlter/InputFIlter";
+import NumberPagination from "./NumberPagination/NumberPagination";
 
 export {
     Input,
@@ -10,4 +13,7 @@ export {
     inputAlert,
     Avatar,
     ItemNavbar,
+    SectionTitle,
+    InputFIlter,
+    NumberPagination,
 }

@@ -17,7 +17,7 @@ export default function RootLayout({
       <body className={``}>
         <Sidebar />
         <main className="content-dashboard">
-            
+
             {children}
         </main>
       </body>

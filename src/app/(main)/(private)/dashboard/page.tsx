@@ -1,7 +1,7 @@
+import SectionDashboard from "@/ui/templates/SectionDashboard/SectionDashboard";
+
 export default function DashboardView():React.ReactNode{
     return (
-        <div className="content-dashboard">
-            <h1>Dashboard</h1>
-        </div>
+        <SectionDashboard />
     )
 }   

@@ -1,0 +1,11 @@
+div.content-number {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: var(--background-color-gray);
+    color: var(--color-white);
+    font-weight: bold;
+}

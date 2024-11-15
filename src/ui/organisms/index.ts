@@ -1,9 +1,13 @@
 import FormLogin from "./auth/FormLogin/FormLogin";
 import FormRegister from "./auth/FormRegister/FormRegister";
 import Sidebar from "./Sidebar/Sidebar";
+import Filter from "./FIlter/Filter";
+import Table from "./Table/Table";
 
 export {
     FormLogin,
     FormRegister,
-    Sidebar
+    Sidebar,
+    Filter,
+    Table,
 }
