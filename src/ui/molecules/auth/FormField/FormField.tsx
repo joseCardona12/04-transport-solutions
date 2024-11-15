@@ -1,5 +1,5 @@
 import { Control, Controller, FieldError, FieldValues, Path } from "react-hook-form";
-import { Input } from "@/app/ui/atoms";
+import { Input } from "@/ui/atoms";
 import "./formFieldStyles.scss";
 
 interface IFormFieldProps<T extends FieldValues>{
