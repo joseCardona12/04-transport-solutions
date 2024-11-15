@@ -6,11 +6,12 @@ import "./modalCreateStyles.scss";
 import { ButtonUpFile } from "@/ui/molecules";
 import { IVehicleRequestCreate } from "@/app/core/application/dtos/vehicles";
 import { useState } from "react";
+import { useImageState } from "@/app/core/application/global-state";
 
 
 export default function ModalCreate():React.ReactNode{
     const initialForm: IVehicleRequestCreate = {
-        file: "",
+        file:"",
         make: "",
         licensePlate: "",
         model: "",
@@ -18,6 +19,7 @@ export default function ModalCreate():React.ReactNode{
     }
 
     const [formData, setFormData] = useState<IVehicleRequestCreate>(initialForm);
+    const {url_image, setUrlImage} = useImageState((state)=>state);
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
         const {name,value} = e.target;
@@ -28,8 +30,9 @@ export default function ModalCreate():React.ReactNode{
     }
 
     const handleSubmit = ():void =>{
-        console.log
+        console.log(url_image)
     }
+    
     return (
         <div className="content-modal-create">
             <div className="create-header">
@@ -39,7 +42,7 @@ export default function ModalCreate():React.ReactNode{
             <div className="create-body">
                 <div className="body-upFile">
                     <UpFile
-                        image_url="/images/imageDefault.webp"
+                        image_url={url_image ? url_image : "/images/imageDefault.webp"}
                     />  
                     <ButtonUpFile />
                 </div>
@@ -75,11 +78,11 @@ export default function ModalCreate():React.ReactNode{
                 </form>
             </div>
             <hr className="line-modal-create" />
-            <div className="create-footer">
+            <div className="create-footer" onClick={()=>console.log("cancel")}>
                 <Button width="50%">
                     Cancelar
                 </Button>
-                <Button width="50%">
+                <Button width="50%" onClick={handleSubmit}>
                     Agregar
                 </Button>
             </div>

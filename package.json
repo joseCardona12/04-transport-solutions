@@ -12,6 +12,7 @@
     "@hookform/resolvers": "^3.9.1",
     "@types/js-cookie": "^3.0.6",
     "@types/react-svg": "^5.0.0",
+    "cloudinary": "^2.5.1",
     "js-cookie": "^3.0.5",
     "js-cookies": "^1.0.4",
     "next": "14.2.18",

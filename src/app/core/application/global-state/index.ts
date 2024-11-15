@@ -1,3 +1,4 @@
+import { useImageState } from './imageState';
 import { useUserLoggedState } from "./userLoggedState";
 import { useVehicleState } from "./vehicleState";
 import { useMetaDataState } from "./metadataState";
@@ -10,4 +11,5 @@ export {
     useMetaDataState,
     useOpenModalState,
     useVehicleIdState,
+    useImageState,
 }

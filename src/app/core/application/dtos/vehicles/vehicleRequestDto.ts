@@ -14,9 +14,9 @@ export interface IVehicleRequestPagination {
 }
 
 export interface IVehicleRequestCreate {
+    file:string,
     make?:string,
     model?:string,
     year?:string,
     licensePlate?:string,
-    file?: File | undefined
 }

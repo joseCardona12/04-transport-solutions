@@ -14,3 +14,5 @@ class CloudDinaryService implements PCloudinary{
         return data;
     }
 }
+
+export default new CloudDinaryService();
