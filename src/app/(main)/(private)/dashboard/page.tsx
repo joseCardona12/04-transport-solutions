@@ -27,7 +27,6 @@ export default async function DashboardView({searchParams}:IDashboardViewProps){
     const size: number = searchParams.totalPages ?  parseInt(searchParams.totalPages) : 4;
 
     const vehicles: IVehicleResponse = await VehicleService.getVehicles({page,size});
-    console.log(vehicles);
     
     return (
         <ProviderVehicles vehicles={vehicles.data} metaData={vehicles.metadata}>     

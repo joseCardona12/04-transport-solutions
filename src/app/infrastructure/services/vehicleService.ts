@@ -21,8 +21,9 @@ class VehicleService implements PVehicles {
     }
 
     async deleteVehicle(id: string): Promise<void> {
+        console.log("from backend", id)
         const data = await this.httpClientUtil.delete<void>(`vehicles/${id}`);
-        console.log(data);
+        console.log("dadsadasdasd",data);
         return data;
     }
 }

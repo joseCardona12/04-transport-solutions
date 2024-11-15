@@ -32,13 +32,12 @@ export default class HttpClient {
 
   async get<T>(url: string): Promise<T> {
     const headers = await this.getHeader();
-    console.log("url" + url)
+    console.log("url" + url, "header", headers)
     const response = await fetch(`${this.baseUrl}/${url}`, {
       headers: headers,
       method: "GET",
       cache: "no-store",
     });
-    console.log(response, "-------", url);
     return this.handleResponse(response);
   }
 
@@ -48,7 +47,7 @@ export default class HttpClient {
       headers: headers,
       method: "DELETE",
     });
-    console.log(response)
+    console.log("-----",response)
     return this.handleResponse(response);
   }
 

@@ -1,3 +1,4 @@
+"use client";
 import { Button, inputAlert } from "@/ui/atoms";
 import "./modalDeleteStyles.scss";
 import { useOpenModalState, useVehicleIdState } from "@/app/core/application/global-state";
@@ -13,9 +14,21 @@ export default function ModalDelete():React.ReactNode{
 
 
     const handleClickAccept = async():Promise<void> => {
-        await VehicleService.deleteVehicle(id.toString())
-        inputAlert("Vehículo eliminado", "success");
-        setOpenModal(false);
+        console.log("hello");
+        if(!id){
+            inputAlert("Error to get id vehicle", "error");
+            return;
+        }
+        console.log("id", id);
+        try{
+            await VehicleService.deleteVehicle(id.toString())
+            inputAlert("Vehículo eliminado", "success");
+            setOpenModal(false);
+
+        }catch(error:unknown){
+            console.log("error", error);
+            inputAlert("Error to delete vehicle", "error");
+        }
     }
     return (
         <div className="content-modal">

@@ -17,7 +17,7 @@ export default function Table({
     const {setOpenModal} = useOpenModalState((state)=>state); 
     const {setId} = useVehicleIdState((state)=>state);
 
-    const handleDeleteVehicle = (id:number):void =>{
+    const handleDeleteVehicle = async(id:number):Promise<void> =>{
         setOpenModal(true);
         setId(id);
     }
