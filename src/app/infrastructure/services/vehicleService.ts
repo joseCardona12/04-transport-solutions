@@ -14,8 +14,8 @@ class VehicleService implements PVehicles {
         return data;
     }
 
-    async getVehiclesByFilter(filter: string): Promise<IVehicleResponse> {
-        const data = await this.httpClientUtil.get<IVehicleResponse>(`${filter}`);
+    async getVehiclesByFilter(filter: string | undefined): Promise<IVehicleResponse> {
+        const data = await this.httpClientUtil.get<IVehicleResponse>(`vehicles?${filter}`);
         console.log("data",data);
         return data;
     }

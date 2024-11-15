@@ -6,6 +6,7 @@ import ItemNavbar from "./ItemNavbar/ItemNavbar";
 import SectionTitle from "./SectionTitle/SectionTitle";
 import InputFIlter from "./InputFIlter/InputFIlter";
 import NumberPagination from "./NumberPagination/NumberPagination";
+import ModalLoading from "./ModalLoading/ModalLoading";
 
 export {
     Input,
@@ -16,4 +17,5 @@ export {
     SectionTitle,
     InputFIlter,
     NumberPagination,
+    ModalLoading,
 }

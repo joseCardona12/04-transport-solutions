@@ -1,6 +1,6 @@
 "use client";
 
-import { SectionTitle } from "@/ui/atoms";
+import { ModalLoading, SectionTitle } from "@/ui/atoms";
 import { Filter, Table } from "@/ui/organisms";
 import "./sectionDashboardStyles.scss";
 import { ButtonsManage } from "@/ui/molecules";
@@ -21,7 +21,8 @@ export default function SectionDashboard():React.ReactNode{
                 columns={["Foto", "Marca", "Modelo", "Año", "Placa", "Acciones"]}
             />
             <Pagination />
-            {openModal && <ModalDelete />}
+            {openModal.state && openModal.type === "MODAL_DELETE" && <ModalDelete />}
+            {openModal.state && openModal.type === "MODAL_LOADING" && <ModalLoading text="Saving filters for get vehicles..." />}
         </section>
     )
 }

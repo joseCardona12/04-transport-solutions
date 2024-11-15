@@ -9,6 +9,15 @@ interface IVehiclesState {
 }
 
 export const useVehicleState = create<IVehiclesState>((set)=>({
-    vehicles: [],
+    vehicles: [
+        {
+            id: 0,
+            make: "",
+            model: "",
+            year: 0,
+            photo: "",
+            licensePlate: ""
+        }
+    ],
     setVehicles: (vehicles: IVehicle[]) => set(state => ({...state, vehicles })),
 }))

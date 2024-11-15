@@ -5,6 +5,8 @@ import { VehicleService } from "@/app/infrastructure/services";
 import SectionDashboard from "@/ui/templates/SectionDashboard/SectionDashboard";
 import { getServerSession } from "next-auth/next";
 import ProviderVehicles from "./ProviderVehicles";
+import ProviderFilters from "./ProviderFilter";
+import { cookies } from "next/headers";
 
 interface IDashboardViewProps{
     searchParams: {
@@ -25,12 +27,16 @@ const generateMetadata = async({searchParams}: IDashboardViewProps) =>{
 export default async function DashboardView({searchParams}:IDashboardViewProps){
     const page:number = searchParams.page ? parseInt(searchParams.page) : 1;
     const size: number = searchParams.totalPages ?  parseInt(searchParams.totalPages) : 4;
+    const storeCookies = cookies();
+    const getFilters = storeCookies.get("filters")?.value;
 
     const vehicles: IVehicleResponse = await VehicleService.getVehicles({page,size});
-    
+    const vehiclesFilters: IVehicleResponse = await VehicleService.getVehiclesByFilter(getFilters);
     return (
-        <ProviderVehicles vehicles={vehicles.data} metaData={vehicles.metadata}>     
+        <ProviderVehicles vehicles={vehiclesFilters ? vehiclesFilters.data : vehicles.data} metaData={vehicles.metadata}>     
+            <ProviderFilters>
             <SectionDashboard />
+            </ProviderFilters>
         </ProviderVehicles>
     )
 }   

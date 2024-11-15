@@ -9,5 +9,5 @@ export {
     useVehicleState,
     useMetaDataState,
     useOpenModalState,
-    useVehicleIdState
+    useVehicleIdState,
 }

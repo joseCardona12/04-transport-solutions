@@ -11,14 +11,18 @@ interface ITableProps {
     rows?: string[],
 }
 export default function Table({
-    columns
+    columns = [],
+    
 }: ITableProps):React.ReactNode {
     const {vehicles} = useVehicleState((state)=>state);
     const {setOpenModal} = useOpenModalState((state)=>state); 
     const {setId} = useVehicleIdState((state)=>state);
 
     const handleDeleteVehicle = async(id:number):Promise<void> =>{
-        setOpenModal(true);
+        setOpenModal({
+            state: true,
+            type: "MODAL_DELETE"
+        });
         setId(id);
     }
     return (
@@ -33,7 +37,9 @@ export default function Table({
                         
                 </thead>
                 <tbody>
-                    {vehicles.map((vehicle:IVehicle, index:number)=>(
+                    {vehicles   
+                    ?
+                    vehicles.map((vehicle:IVehicle, index:number)=>(
                         <tr key={index}>
                             <td className="image-vehicle">
                                 <img src={vehicle.photo} alt="photo" />
@@ -50,7 +56,12 @@ export default function Table({
                                 </div>
                             </td>
                         </tr>
-                    ))}
+                    ))
+                    : 
+                    <tr>
+                        <th>There are not vehicles...</th>
+                    </tr>
+                    }
                 </tbody>
             </table>
         </div>
