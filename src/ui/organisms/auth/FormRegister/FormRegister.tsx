@@ -7,7 +7,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, inputAlert } from "@/ui/atoms";
 import Link from "next/link";
-import "./formLoginStyles.scss";
+import "../FormLogin/formLoginStyles.scss";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { ILoginRequest } from "@/app/core/application/dtos/auth/loginRequestDto";
@@ -23,7 +23,7 @@ const loginSchema = yup.object().shape({
     .min(3, "Password must be more than 3 characters"),
 });
 
-export default function FormLogin(): React.ReactNode {
+export default function FormRegister(): React.ReactNode {
 
   const router = useRouter();
 
@@ -39,7 +39,7 @@ export default function FormLogin(): React.ReactNode {
   });
 
 
-  const handleLogin = async ({ email, password }: ILoginRequest): Promise<void> => {
+  const handleRegister = async ({ email, password }: ILoginRequest): Promise<void> => {
     console.log(email, password);
     const response = await signIn("credentials", {
       redirect: false,
@@ -66,13 +66,13 @@ export default function FormLogin(): React.ReactNode {
   };
   return (
     <div className="content-form">
-      <form className="form" onSubmit={handleSubmit(handleLogin)}>
+      <form className="form" onSubmit={handleSubmit(handleRegister)}>
         <Identify
           icon={<img src="/icons/cartIcon.svg" alt="cartIcon" />}
           logoText="Transport Solutions S.A"
         />
         <div className="content-info">
-          <h5 className="info">Inicia sesiòn en tu cuenta y gestiona tu flota de vehìculos</h5>
+          <h5 className="info">Crear una cuenta y gestionar tu flota de vehículos</h5>
         </div>
         <FormField<ILoginRequest>
           control={control}
@@ -94,10 +94,10 @@ export default function FormLogin(): React.ReactNode {
         />
         <Button className="button-login">
           <IconLock />
-          Iniciar sesiòn
+          Crear cuenta
         </Button>
         <div className="content-problems">
-            <p className="problems">¿Problemas para iniciar sesiòn? Contacta al administrador del sistema</p>
+            <p className="problems">¿Problemas para crear una cuenta? Contacta al administrador del sistema</p>
         </div>
       </form>
     </div>

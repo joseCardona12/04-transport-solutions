@@ -9,7 +9,8 @@ interface IFormFieldProps<T extends FieldValues>{
     type:string,
     placeholder:string,
     id?:string,
-    label:string
+    label:string,
+    icon?: React.ReactElement
 }
 export default function FormField<T extends FieldValues>({
     control,
@@ -19,6 +20,7 @@ export default function FormField<T extends FieldValues>({
     placeholder,
     id,
     label,
+    icon
 }:IFormFieldProps<T>):React.ReactNode{
     return(
         <div className="content-formField">
@@ -36,10 +38,13 @@ export default function FormField<T extends FieldValues>({
                         placeholder={placeholder}
                         {...field}
                         error={error?.message}
+                        icon={icon}
                     />
+                    
                 )}
             
             />
+            
         </div>
     )
 }

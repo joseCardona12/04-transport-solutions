@@ -1,0 +1,11 @@
+
+div.content-identify{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2.identify-title{
+        color: var(--color-blue);
+    }
+}

@@ -1,0 +1,13 @@
+button {
+    background-color: var(--background-color-secondary);
+    border: none;
+    padding: var(--padding-small);
+    border-radius: var(--border-radius-medium);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--padding-small);
+    width: 50%;
+    font-weight: bold;
+}

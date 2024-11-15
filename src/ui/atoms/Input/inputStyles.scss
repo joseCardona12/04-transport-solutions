@@ -1,0 +1,19 @@
+
+div.content-input {
+    width: 100%;
+    
+    input {
+        width: 100%;
+        border: 1px solid var(--border-color-gray);
+        outline: none;
+        padding: var(--padding-small);
+        border-radius: var(--border-radius-small);
+        box-shadow: var(--box-shadow-first);
+        font-family: var(--font-main);
+
+        
+    }
+    .input-error {
+        color: var(--color-red);
+    }
+}

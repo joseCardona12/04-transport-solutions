@@ -1,0 +1,33 @@
+
+
+div.content-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--padding-medium);
+    padding: var(--padding-extra-large);
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--box-shadow-first);
+
+    form.form {
+        display: flex;
+        flex-direction: column;
+        gap: var(--padding-large);
+        justify-content: center;
+        align-items: center;
+
+        div.content-info > h5{
+            font-size: .8rem;
+            font-weight: 500;
+        }
+
+        div.content-problems {
+            width: 70%;
+            text-align: center;
+            p{
+                font-size: .8rem;
+            }
+        }
+    }
+}

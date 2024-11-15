@@ -1,9 +1,10 @@
-
+import "./inputStyles.scss";
 interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
     error?:string,
     placeholder?:string,
     name?:string,
     type?:string,
+    icon?:React.ReactElement
 }
 
 export default function Input({
@@ -11,6 +12,7 @@ export default function Input({
     error,
     name,
     type = "text",
+    icon,
     ...props
 }: IInputProps):React.ReactNode{
     return (
@@ -21,6 +23,7 @@ export default function Input({
                 {...props}
             />
             {error && <p className="input-error">{error}</p>}
+            {icon && <div className="icon">{icon}</div>}
         </div>
     )
 }
