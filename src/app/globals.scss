@@ -1,0 +1,36 @@
+:root {
+
+    /* background colors*/
+    --background-color-main: #FFFFFF;
+    --background-color-secondary: #7692FF;
+
+    /* Border colors*/
+    --border-color-gray: #9E9E9E;
+
+    /*Colors text*/
+    --color-black: #2F2B3D;
+
+    /* Box shadows*/
+    --box-shadow-first: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    
+}
+
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background-color: var();
+}
