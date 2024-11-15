@@ -17,6 +17,7 @@ export default function Table({
                             <th key={index}>{column}</th>
                         ))}
                     </tr>
+                        
                 </thead>
                 <tbody>
                     <tr>

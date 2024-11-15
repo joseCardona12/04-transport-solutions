@@ -1,6 +1,7 @@
 import { Sidebar } from "@/ui/organisms";
 import type { Metadata } from "next";
 import "./dashboardStyles.scss";
+import GuardAuth from "../Guard/GuardAuth";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,14 +14,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={``}>
-        <Sidebar />
-        <main className="content-dashboard">
-
-            {children}
-        </main>
-      </body>
-    </html>
+    <GuardAuth>
+      <Sidebar />
+      <main className="content-dashboard">
+          {children}
+      </main>
+    </GuardAuth>
   );
 }

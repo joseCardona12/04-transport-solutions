@@ -10,4 +10,10 @@ button {
     gap: var(--padding-small);
     width: 50%;
     font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+        background-color: var(--background-color-seconday-hover);
+    }
 }

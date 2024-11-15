@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import { ILoginRequest } from "@/app/core/application/dtos/auth/loginRequestDto";
 import Identify from "@/ui/atoms/Identify/Identify";
 import { IconEye, IconLock } from "@/assets/icons";
+import { UtilApplication } from "@/app/core/application/utils";
 
 const loginSchema = yup.object().shape({
   email: yup.string().email("Email is Incorrect").required("Email is Required"),
@@ -40,7 +41,6 @@ export default function FormLogin(): React.ReactNode {
 
 
   const handleLogin = async ({ email, password }: ILoginRequest): Promise<void> => {
-    console.log(email, password);
     const response = await signIn("credentials", {
       redirect: false,
       email,
@@ -59,9 +59,9 @@ export default function FormLogin(): React.ReactNode {
       inputAlert("Credenciales incorrectas", "error");
       return;
     }
-    /*const getNameSeparate = Util.separateName(email);
+    const getNameSeparate = UtilApplication.separateName(email);
     inputAlert(`Bienvenido ${getNameSeparate}`, "success");
-    router.push("/dashboard"); */
+    router.push("/dashboard"); 
 
   };
   return (
