@@ -6,21 +6,28 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Button, inputAlert } from "@/ui/atoms";
-import Link from "next/link";
 import "../FormLogin/formLoginStyles.scss";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { ILoginRequest } from "@/app/core/application/dtos/auth/loginRequestDto";
 import Identify from "@/ui/atoms/Identify/Identify";
-import { IconEye, IconLock } from "@/assets/icons";
+import { IconLock } from "@/assets/icons";
+import { IRegisterRequest } from "@/app/core/application/dtos/auth";
 
 const loginSchema = yup.object().shape({
-  email: yup.string().email("Email is Incorrect").required("Email is Required"),
+  email: yup
+    .string()
+    .email("Email is Incorrect")
+    .required("Email is Required"),
   password: yup
     .string()
     .required("Password is Required")
     .max(12, "Password must be less than 12 characters")
     .min(3, "Password must be more than 3 characters"),
+  name: yup 
+    .string()
+    .max(12, "The name must be less than 12 characters")
+    .min(3, "The name must be more than 3 characters")
 });
 
 export default function FormRegister(): React.ReactNode {
@@ -39,30 +46,8 @@ export default function FormRegister(): React.ReactNode {
   });
 
 
-  const handleRegister = async ({ email, password }: ILoginRequest): Promise<void> => {
-    console.log(email, password);
-    const response = await signIn("credentials", {
-      redirect: false,
-      email,
-      password,
-    });
-
-    if (!response?.ok) {
-      setError("email", {
-        type: "manual",
-        message: "Credenciales incorrectas",
-      });
-      setError("password", {
-        type: "manual",
-        message: "Credenciales incorrectas",
-      });
-      inputAlert("Credenciales incorrectas", "error");
-      return;
-    }
-    /*const getNameSeparate = Util.separateName(email);
-    inputAlert(`Bienvenido ${getNameSeparate}`, "success");
-    router.push("/dashboard"); */
-
+  const handleRegister = async ( data: IRegisterRequest): Promise<void> => {
+    console.log(data);
   };
   return (
     <div className="content-form">
@@ -74,7 +59,7 @@ export default function FormRegister(): React.ReactNode {
         <div className="content-info">
           <h5 className="info">Crear una cuenta y gestionar tu flota de vehículos</h5>
         </div>
-        <FormField<ILoginRequest>
+        <FormField<IRegisterRequest>
           control={control}
           label="Correo electrònico"
           name="email"
@@ -83,7 +68,7 @@ export default function FormRegister(): React.ReactNode {
           id="email"
           error={errors.email}
         />
-        <FormField<ILoginRequest>
+        <FormField<IRegisterRequest>
           control={control}
           label="Contraseña"
           name="password"
@@ -91,6 +76,15 @@ export default function FormRegister(): React.ReactNode {
           placeholder="Enter your password"
           id="password"
           error={errors.password}
+        />
+        <FormField<IRegisterRequest>
+          control={control}
+          label="Name"
+          name="name"
+          type="text"
+          placeholder="Enter your name"
+          id="name"
+          error={errors.name}
         />
         <Button className="button-login">
           <IconLock />

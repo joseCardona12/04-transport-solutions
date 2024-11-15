@@ -1,7 +1,7 @@
 "use client";
 
 import { IconDelete, IconFilter } from "@/assets/icons";
-import { Button } from "@/ui/atoms";
+import { Button, inputAlert } from "@/ui/atoms";
 import GroupInputFilter from "@/ui/molecules/GroupInputFIlter/GroupInputFilter";
 import "./filterStyles.scss";
 import { useState } from "react";
@@ -42,6 +42,17 @@ export default function Filter():React.ReactNode{
             type: "MODAL_LOADING"
         });
     }
+
+    const handleClean = ():void =>{
+        if(!Cookies.get("filters")){
+            inputAlert("There is not exists filters for delete", "error");
+            return;
+        }
+        setOpenModal({
+            state: true,
+            type: "MODAL_CLEAN"
+        });
+    }
     return (
         <div className="content-filter">
             <div className="filters">
@@ -75,7 +86,7 @@ export default function Filter():React.ReactNode{
                     <IconFilter />
                     Buscar
                 </Button>
-                <Button>    
+                <Button onClick={handleClean}>    
                     <IconDelete />
                     Limpiar
                 </Button>

@@ -23,6 +23,7 @@ export default function SectionDashboard():React.ReactNode{
             <Pagination />
             {openModal.state && openModal.type === "MODAL_DELETE" && <ModalDelete />}
             {openModal.state && openModal.type === "MODAL_LOADING" && <ModalLoading text="Saving filters for get vehicles..." />}
+            {openModal.state && openModal.type === "MODAL_CLEAN" && <ModalLoading text="Deleting filters..." />}
         </section>
     )
 }

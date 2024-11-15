@@ -19,7 +19,11 @@ export default function Sidebar({
             />
             <hr />
             <Avatar
-                name={"Kevin Mejìa"}
+                name={
+                    name_user 
+                    ? name_user
+                    : "Kevin Mejìa"
+                }
                 icon={<img src="/icons/userIcon.svg" alt="userIcon" />}
             />
             <Navbar />
