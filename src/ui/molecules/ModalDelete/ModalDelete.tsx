@@ -4,7 +4,11 @@ import "./modalDeleteStyles.scss";
 import { useOpenModalState, useVehicleIdState } from "@/app/core/application/global-state";
 import { VehicleService } from "@/app/infrastructure/services";
 
-export default function ModalDelete():React.ReactNode{
+interface IModalDeleteProps{
+    children: React.ReactNode
+}
+
+export default function ModalDelete({children}: IModalDeleteProps):React.ReactNode{
     const {setOpenModal} = useOpenModalState((state)=>state);
     const {id} = useVehicleIdState((state)=>state);
 
@@ -39,9 +43,7 @@ export default function ModalDelete():React.ReactNode{
     return (
         <div className="content-modal">
             <div className="modal-body">
-                <p className="body">
-                    ¿Estás seguro que deseas eliminar este vehículo? 
-                </p>
+                {children}
                 <div className="body-close" onClick={handleCloseModal}>x</div>
             </div>
             <div className="modal-footer">

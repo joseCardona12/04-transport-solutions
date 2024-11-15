@@ -1,6 +1,6 @@
 import { PAuth } from "@/app/core/application/ports";
 import { ClientHttpUtil } from "../utils";
-import { ILoginResponse } from "@/app/core/application/dtos/auth";
+import { ILoginResponse, IRegisterRequest } from "@/app/core/application/dtos/auth";
 import { ILoginRequest } from "@/app/core/application/dtos/auth/loginRequestDto";
 
 export default class AuthService implements PAuth {
@@ -16,7 +16,8 @@ export default class AuthService implements PAuth {
         return data;
     }
 
-    async register(){
-        
+    async register(request: IRegisterRequest): Promise<ILoginResponse> {
+        const data = await this.clientHttpUtil.post<ILoginResponse, IRegisterRequest>(`${this.basePath}/register`, request);
+        return data;
     }
 }

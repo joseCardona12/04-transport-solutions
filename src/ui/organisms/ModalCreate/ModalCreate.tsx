@@ -19,7 +19,7 @@ export default function ModalCreate():React.ReactNode{
     }
 
     const [formData, setFormData] = useState<IVehicleRequestCreate>(initialForm);
-    const {url_image, setUrlImage} = useImageState((state)=>state);
+    const {url_image} = useImageState((state)=>state);
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
         const {name,value} = e.target;

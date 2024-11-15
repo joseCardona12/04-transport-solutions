@@ -28,6 +28,11 @@ class VehicleService implements PVehicles {
         return data;
     }
 
+    async getVehicleById(id: string): Promise<IVehicleResponse | IResponseError> {
+        const data = await this.httpClientUtil.get<IVehicleResponse>(`vehicles/${id}`);
+        return data;
+    }
+
     async createVehicle(request: IVehicleRequestCreate):Promise<{}| IResponseError>{
         const data = await this.httpClientUtilFormData.post<IVehicleRequestCreate, {}>("vehicles", request);
         return data;

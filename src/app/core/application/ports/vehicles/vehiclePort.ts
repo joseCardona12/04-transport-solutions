@@ -26,6 +26,14 @@ export interface PVehicles {
     getVehiclesByFilter(filter:string): Promise<IVehicleResponse>
 
     /**
+     * Get vehicle by id. 
+     * @params id - **Required**. for get one vehicle that match with param **id**
+     * @returns A vehicle
+     */
+
+    getVehicleById(id:string):Promise<IVehicleResponse | IResponseError>
+
+    /**
      * Create a new vehicle
      * @Method
      * @param request This is an object that contains all properties for create a new vehicle 
