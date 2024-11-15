@@ -8,4 +8,9 @@ div.content-number {
     background-color: var(--background-color-gray);
     color: var(--color-white);
     font-weight: bold;
+    cursor: pointer;
+
+    &:active {
+        background-color: var(--background-color-blue);
+    }
 }

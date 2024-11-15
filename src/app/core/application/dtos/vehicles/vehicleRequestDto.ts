@@ -7,3 +7,8 @@ export interface IVehicleRequest {
     make:string,
     model:string
 }
+
+export interface IVehicleRequestPagination {
+    page: number,
+    size: number
+}

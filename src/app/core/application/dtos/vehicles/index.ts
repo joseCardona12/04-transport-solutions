@@ -1,4 +1,4 @@
-import { IVehicleRequest } from './vehicleRequestDto';
+import { IVehicleRequest, IVehicleRequestPagination } from './vehicleRequestDto';
 import { IVehicleResponse, IVehicle, IVehicleMetadata } from './vehicleResponseDto';
 
 
@@ -7,4 +7,5 @@ export type{
     IVehicleResponse,
     IVehicle,
     IVehicleMetadata,
+    IVehicleRequestPagination
 }

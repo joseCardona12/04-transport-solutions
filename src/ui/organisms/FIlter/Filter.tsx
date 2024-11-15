@@ -4,6 +4,7 @@ import GroupInputFilter from "@/ui/molecules/GroupInputFIlter/GroupInputFilter";
 import "./filterStyles.scss";
 
 export default function Filter():React.ReactNode{
+    
     return (
         <div className="content-filter">
             <div className="filters">

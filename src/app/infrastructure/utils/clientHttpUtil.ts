@@ -11,7 +11,7 @@ export default class HttpClient {
     this.baseUrl = baseUrl || defaultBaseUrl;
   }
 
-  private async getHeader(token?: string) {
+  private async getHeader() {
     const session = await getServerSession(authOptions);
     const userLogged = session?.user as IUserLogged;
   
@@ -19,7 +19,7 @@ export default class HttpClient {
       "Content-Type": "application/json",
     };
 
-    if (token) {
+    if (session) {
       headers["Authorization"] = `Bearer ${userLogged.token}`;
     }
 
@@ -27,26 +27,18 @@ export default class HttpClient {
   }
 
   private async handleResponse(response: Response) {
-    if (!response.ok) {
-      try {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Ocurrio un error en la petición");
-      } catch (error) {
-        throw new Error("Ocurrio un error en la petición, pero no se pudo parsear la respuesta");
-      }
-    }
     return await response.json();
   }
 
   async get<T>(url: string): Promise<T> {
     const headers = await this.getHeader();
-    console.log("header", headers);
+    console.log("url" + url)
     const response = await fetch(`${this.baseUrl}/${url}`, {
       headers: headers,
       method: "GET",
       cache: "no-store",
     });
-    console.log(response, response.status);
+    console.log(response, "-------", url);
     return this.handleResponse(response);
   }
 
@@ -56,6 +48,7 @@ export default class HttpClient {
       headers: headers,
       method: "DELETE",
     });
+    console.log(response)
     return this.handleResponse(response);
   }
 

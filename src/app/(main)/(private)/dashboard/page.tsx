@@ -4,6 +4,7 @@ import { IUserLogged } from "@/app/core/application/interfaces";
 import { VehicleService } from "@/app/infrastructure/services";
 import SectionDashboard from "@/ui/templates/SectionDashboard/SectionDashboard";
 import { getServerSession } from "next-auth/next";
+import ProviderVehicles from "./ProviderVehicles";
 
 interface IDashboardViewProps{
     searchParams: {
@@ -23,12 +24,14 @@ const generateMetadata = async({searchParams}: IDashboardViewProps) =>{
 
 export default async function DashboardView({searchParams}:IDashboardViewProps){
     const page:number = searchParams.page ? parseInt(searchParams.page) : 1;
-    const size: number = searchParams.totalPages ?  parseInt(searchParams.totalPages) : 6;
+    const size: number = searchParams.totalPages ?  parseInt(searchParams.totalPages) : 4;
 
-    const vehicles: IVehicleResponse = await VehicleService.getVehicles();
+    const vehicles: IVehicleResponse = await VehicleService.getVehicles({page,size});
     console.log(vehicles);
     
     return (
-        <SectionDashboard />
+        <ProviderVehicles vehicles={vehicles.data} metaData={vehicles.metadata}>     
+            <SectionDashboard />
+        </ProviderVehicles>
     )
 }   

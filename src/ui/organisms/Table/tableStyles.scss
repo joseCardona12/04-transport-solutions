@@ -32,6 +32,7 @@ td {
     justify-content: center;
     align-items: center;
     width: 100%;
+    cursor: pointer;
 
     div.icons{
         display: flex;
@@ -42,6 +43,14 @@ td {
 
 th, td {
     width: 25%; 
+}
+
+.image-vehicle {
+
+    img {
+        width: 70px;
+        height: 100%;
+    }
 }
 
 @media (max-width: 768px) {
