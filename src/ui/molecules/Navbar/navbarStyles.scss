@@ -1,0 +1,6 @@
+nav.navbar > ul.navbar-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-small);
+    padding-left: 0;
+}

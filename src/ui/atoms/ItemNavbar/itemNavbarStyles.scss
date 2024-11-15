@@ -1,0 +1,19 @@
+li.item-sidebar {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: var(--padding-small);
+
+    div.sidebar-icon {
+        border-radius: var(--border-radius-medium);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: var(--padding-extra-small);
+    }
+
+    .sidebar-link {
+        text-decoration: none;
+        color: var(--color-black);
+    }
+}

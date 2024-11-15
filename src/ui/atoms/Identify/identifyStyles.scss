@@ -9,3 +9,18 @@ div.content-identify{
         color: var(--color-blue);
     }
 }
+
+div.content-identify-dashboard {
+    flex-direction: row;
+    gap: var(--padding-medium);
+    
+    span > img {
+        display: inline-block;
+        width: 40px;
+    }
+
+    h2.identify-title{
+        color: var(--color-black);
+        font-size: .9rem    ;
+    }
+}

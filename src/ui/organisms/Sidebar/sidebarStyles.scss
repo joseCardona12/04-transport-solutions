@@ -1,0 +1,11 @@
+div.sidebar {
+    grid-area: sidebar;
+    padding: var(--padding-medium);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding-medium);
+
+    hr{
+        width: 80%;
+    }
+}

@@ -1,0 +1,16 @@
+body {
+    display: grid;
+    grid-template-columns: 350px auto;
+    grid-template-rows: 100px auto;
+    grid-template-areas: 
+    "sidebar main"
+    "sidebar main"
+    ;
+
+
+    main.content-dashboard {
+        grid-area: main;
+        padding: var(--padding-large);
+    }
+}
+

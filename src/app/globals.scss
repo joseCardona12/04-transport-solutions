@@ -3,7 +3,8 @@
 :root {
 
     /* background colors*/
-    --background-color-main: #FFFFFF;
+    --background-color-main: #f5f5f5;
+    --background-color-white: #FFFFFF;
     --background-color-secondary: #7692FF;
 
     /* Border colors*/
@@ -19,6 +20,7 @@
     --box-shadow-first: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
     /* Spaces paddings*/
+    --padding-extra-small: 0.25rem;
     --padding-small: 0.5rem;
     --padding-medium: 1rem;
     --padding-large: 1.5rem;
