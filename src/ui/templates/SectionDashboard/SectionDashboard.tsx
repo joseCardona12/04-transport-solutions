@@ -1,7 +1,7 @@
 "use client";
 
 import { ModalLoading, SectionTitle } from "@/ui/atoms";
-import { Filter, Table } from "@/ui/organisms";
+import { Filter, ModalCreate, Table } from "@/ui/organisms";
 import "./sectionDashboardStyles.scss";
 import { ButtonsManage } from "@/ui/molecules";
 import Pagination from "@/ui/molecules/Pagination/Pagination";
@@ -24,6 +24,7 @@ export default function SectionDashboard():React.ReactNode{
             {openModal.state && openModal.type === "MODAL_DELETE" && <ModalDelete />}
             {openModal.state && openModal.type === "MODAL_LOADING" && <ModalLoading text="Saving filters for get vehicles..." />}
             {openModal.state && openModal.type === "MODAL_CLEAN" && <ModalLoading text="Deleting filters..." />}
+            {openModal.state && openModal.type === "MODAL_CREATE" && <ModalCreate />}
         </section>
     )
 }

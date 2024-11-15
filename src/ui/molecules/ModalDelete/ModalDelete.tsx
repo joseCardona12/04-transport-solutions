@@ -9,7 +9,10 @@ export default function ModalDelete():React.ReactNode{
     const {id} = useVehicleIdState((state)=>state);
 
     const handleCloseModal = ():void =>{
-        setOpenModal(false);
+        setOpenModal({
+            state: false,
+            type: "MODAL_DELETE"
+        });
     }
 
 
@@ -23,7 +26,10 @@ export default function ModalDelete():React.ReactNode{
         try{
             await VehicleService.deleteVehicle(id.toString())
             inputAlert("Vehículo eliminado", "success");
-            setOpenModal(false);
+            setOpenModal({
+                state: false,
+                type: "MODAL_DELETE"
+            });
 
         }catch(error:unknown){
             console.log("error", error);

@@ -62,7 +62,7 @@ export default function Table({
                     ))
                     : 
                     <tr>
-                        <th>There are not vehicles...</th>
+                        <td>There are not vehicles...</td>
                     </tr>
                     }
                 </tbody>

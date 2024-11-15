@@ -3,6 +3,7 @@ import FormRegister from "./auth/FormRegister/FormRegister";
 import Sidebar from "./Sidebar/Sidebar";
 import Filter from "./FIlter/Filter";
 import Table from "./Table/Table";
+import ModalCreate from "./ModalCreate/ModalCreate";
 
 export {
     FormLogin,
@@ -10,4 +11,5 @@ export {
     Sidebar,
     Filter,
     Table,
+    ModalCreate,
 }

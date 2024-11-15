@@ -7,6 +7,7 @@ import SectionTitle from "./SectionTitle/SectionTitle";
 import InputFIlter from "./InputFIlter/InputFIlter";
 import NumberPagination from "./NumberPagination/NumberPagination";
 import ModalLoading from "./ModalLoading/ModalLoading";
+import UpFile from "./UpFile/UpFile";
 
 export {
     Input,
@@ -18,4 +19,5 @@ export {
     InputFIlter,
     NumberPagination,
     ModalLoading,
+    UpFile,
 }
