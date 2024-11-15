@@ -1,10 +1,35 @@
+"use client";
+
 import { Button, UpFile } from "@/ui/atoms";
 import GroupInputFilter from "@/ui/molecules/GroupInputFIlter/GroupInputFilter";
 import "./modalCreateStyles.scss";
 import { ButtonUpFile } from "@/ui/molecules";
+import { IVehicleRequestCreate } from "@/app/core/application/dtos/vehicles";
+import { useState } from "react";
 
 
 export default function ModalCreate():React.ReactNode{
+    const initialForm: IVehicleRequestCreate = {
+        file: "",
+        make: "",
+        licensePlate: "",
+        model: "",
+        year: ""
+    }
+
+    const [formData, setFormData] = useState<IVehicleRequestCreate>(initialForm);
+
+    const handleChange = (e:React.ChangeEvent<HTMLInputElement>) =>{
+        const {name,value} = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        })
+    }
+
+    const handleSubmit = ():void =>{
+        console.log
+    }
     return (
         <div className="content-modal-create">
             <div className="create-header">
@@ -18,43 +43,43 @@ export default function ModalCreate():React.ReactNode{
                     />  
                     <ButtonUpFile />
                 </div>
-                <div className="body-inputs">
+                <form className="body-inputs">
                     <GroupInputFilter
                         label="Marca"
-                        name="mark"
-                        value=""
-                        onChange={(e)=>console.log(e)}
+                        name="make"
+                        value={formData.make!}
+                        onChange={(e)=> handleChange(e)}
                         placeholder="Ingresa la marca"
                     />
                     <GroupInputFilter
                         label="Modelo"
                         name="model"
-                        value=""
-                        onChange={(e)=>console.log(e)}
+                        value={formData.model!}
+                        onChange={(e)=> handleChange(e)}
                         placeholder="Ingresa el modelo"
                     />
                     <GroupInputFilter
                         label="Año"
                         name="year"
-                        value=""
-                        onChange={(e)=>console.log(e)}
+                        value={formData.year!}
+                        onChange={(e)=> handleChange(e)}
                         placeholder="Ingresa el año"
                     />
                     <GroupInputFilter
                         label="Placa"
                         name="licensePlate"
-                        value=""
-                        onChange={(e)=>console.log(e)}
+                        value={formData.licensePlate!}
+                        onChange={(e)=> handleChange(e)}
                         placeholder="Ingresa la placa"
                     />
-                </div>
+                </form>
             </div>
             <hr className="line-modal-create" />
             <div className="create-footer">
-                <Button>
+                <Button width="50%">
                     Cancelar
                 </Button>
-                <Button background_color="var(--background-color-blue)">
+                <Button width="50%">
                     Agregar
                 </Button>
             </div>

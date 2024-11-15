@@ -13,6 +13,11 @@ div.content-input {
 
         
     }
+
+    .buttonLoad{
+        background-color: var(--backgroun-color-blue);
+        border-radius: var(--border-radius-small);
+    }
     .input-error {
         color: var(--color-red);
     }

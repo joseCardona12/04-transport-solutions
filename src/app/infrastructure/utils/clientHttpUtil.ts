@@ -1,8 +1,8 @@
-const defaultBaseUrl = "https://maintenancesystembc-production.up.railway.app/api/v1";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { IUserLogged } from "@/app/core/application/interfaces";
 import { getServerSession } from "next-auth/next";
 
+const defaultBaseUrl = "https://maintenancesystembc-production.up.railway.app/api/v1";
 
 export default class HttpClient {
   private baseUrl: string;

@@ -21,3 +21,7 @@ export interface IVehicleMetadata {
     totalRecords:number,
     sortField:string,
 }
+
+export interface IVehicleResponseCreate{
+    
+}

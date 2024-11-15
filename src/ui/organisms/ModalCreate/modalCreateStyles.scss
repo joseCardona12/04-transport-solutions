@@ -28,7 +28,7 @@
             gap: var(--padding-medium);
         }
 
-        div.body-inputs {
+        form.body-inputs {
             display: grid;
             grid-template-columns: repeat(2,1fr);
             gap: var(--padding-small);
@@ -42,6 +42,7 @@
     }
 
     div.create-footer{
-        
+        display: flex;
+        gap: var(--padding-medium);
     }
 }

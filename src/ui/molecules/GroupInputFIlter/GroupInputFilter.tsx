@@ -7,6 +7,7 @@ interface IGroupInputFilterProps {
     name:string,
     value:string,
     placeholder?:string,
+    type?:string,
 }
 
 export default function GroupInputFilter({
@@ -14,12 +15,13 @@ export default function GroupInputFilter({
     onChange,
     name,
     value,
-    placeholder
+    placeholder,
+    type
 }: IGroupInputFilterProps):React.ReactNode{
     return (
         <div className="group-input-filter">
             <label htmlFor={label}>{label}</label>
-            <InputFIlter onChange={onChange} name={name} value={value} placeholder={placeholder} />
+            <InputFIlter onChange={onChange} name={name} value={value} placeholder={placeholder} type={type} />
         </div>
     )
 }

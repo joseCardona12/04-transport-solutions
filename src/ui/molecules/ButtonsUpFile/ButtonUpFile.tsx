@@ -1,4 +1,4 @@
-import { Button } from "@/ui/atoms";
+import { Button, Input } from "@/ui/atoms";
 import "./buttonUpFileStyles.scss";
 
 export default function ButtonUpFile():React.ReactNode{
@@ -12,9 +12,10 @@ export default function ButtonUpFile():React.ReactNode{
     return (
         <div className="content-buttonsUpFile">
             <div className="buttonsUpFile">
-                <Button onClick={handleLoad}>
-                    Cargar
-                </Button>
+                <Input
+                    type="file"
+                    className="buttonLoad"
+                />
                 <Button onClick={handleCancel}>
                     Cancelar
                 </Button>
