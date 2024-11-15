@@ -18,5 +18,5 @@ export interface IVehicleRequestCreate {
     model?:string,
     year?:string,
     licensePlate?:string,
-    file?: string | undefined
+    file?: File | undefined
 }

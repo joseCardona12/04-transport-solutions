@@ -22,6 +22,14 @@ export default class HttpClientUtilForm{
         return await this.manageResponse(response);
     }
 
+    async postImage<B>(request: FormData):Promise<B>{
+        const response = await fetch(`${this.baseUrl}`,{
+            method: "POST",
+            body: request
+        });
+        return await this.manageResponse(response);
+    }
+
     async update<T,B>(url:string, request:T):Promise<B>{
         const response = await fetch(`${this.baseUrl}/${url}`,{
             method: "PUT",
