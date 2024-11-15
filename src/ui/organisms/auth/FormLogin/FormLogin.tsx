@@ -1,6 +1,5 @@
 "use client";
 
-import { ILoginRequest } from "@/app/core/application/dtos/auth";
 import { FormField } from "@/ui/molecules";
 import React from "react";
 import { useForm } from "react-hook-form";
@@ -11,6 +10,7 @@ import Link from "next/link";
 import "./formLoginStyles.scss";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { ILoginRequest } from "@/app/core/application/dtos/auth/loginRequestDto";
 
 const loginSchema = yup.object().shape({
   email: yup.string().email("Email is Incorrect").required("Email is Required"),
